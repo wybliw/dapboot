@@ -9,12 +9,12 @@ jobs:
           name: Checkout submodules
           command: git submodule sync && git submodule update --init
       - restore_cache:
-          key: v1-toolchain-checksum-{{ checksum "util/install-toolchain.sh" }}
+          key: v2-toolchain-checksum-{{ checksum "util/install-toolchain.sh" }}
       - run:
           name: Install toolchain
           command: ./util/install-toolchain.sh
       - save_cache:
-          key: v1-toolchain-checksum-{{ checksum "util/install-toolchain.sh" }}
+          key: v2-toolchain-checksum-{{ checksum "util/install-toolchain.sh" }}
           paths:
             - "~/toolchains/"
       - run:
