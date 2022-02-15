@@ -19,7 +19,7 @@ jobs:
             - "~/toolchains/"
       - run:
           name: Compile firmware
-          command: echo $PREFIX && make -f release.Makefile -k all V=1
+          command: echo $PREFIX
           environment:
             PREFIX: "~/toolchains/gcc-arm-embedded/bin/arm-none-eabi-"
       - store_artifacts:
